@@ -1,0 +1,35 @@
+#app {
+  margin: 0 auto;
+}
+
+.homepage {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px lightgrey solid;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+p {
+  font-family: Arial;
+}
+
+.team-column {
+  text-align: center;
+  grid-template-columns: 50%;
+}
+
+.bet-column {
+  text-align: center;
+  grid-template-columns: 50%;
+}

@@ -3,21 +3,62 @@ import delay from './delay';
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
 // All calls return promises.
-const authors = [
+const games = [
   {
-    id: 'cory-house',
-    firstName: 'Cory',
-    lastName: 'House'
-  },
+    0: {
+      teamsPlaying: {
+        team1: "Sweden",
+        team2: "Finland",
+        score: {
+          team1: '',
+          team2: ''
+        }
+      }
+    }
+  }, {
+    1: {
+      teamsPlaying: {
+        team1: "Spain",
+        team2: "Danmark",
+        score: {
+          team1: '',
+          team2: ''
+        }
+      }
+    }
+  }, {
+    2: {
+      teamsPlaying: {
+        team1: "Germany",
+        team2: "Barcelona",
+        score: {
+          team1: '',
+          team2: ''
+        }
+      }
+    }
+  }
+];
+
+const scoreEarnedByCustomers = [
   {
-    id: 'scott-allen',
-    firstName: 'Scott',
-    lastName: 'Allen'
-  },
-  {
-    id: 'dan-wahlin',
-    firstName: 'Dan',
-    lastName: 'Wahlin'
+    name: "Martin",
+    points: "34"
+  }, {
+    name: "Jocke",
+    points: "12"
+  }, {
+    name: "Oskar",
+    points: "26"
+  }, {
+    name: "Lucas",
+    points: "2"
+  }, {
+    name: "Daniel",
+    points: "22"
+  }, {
+    name: "Klas",
+    points: "32"
   }
 ];
 
@@ -26,15 +67,24 @@ const generateId = (author) => {
   return author.firstName.toLowerCase() + '-' + author.lastName.toLowerCase();
 };
 
-class AuthorApi {
-  static getAllAuthors() {
+class GamesApi {
+  static getAllGames() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign([], authors));
+        resolve(Object.assign([], games));
       }, delay);
     });
   }
 
+  static getScoreFromCorrectResult() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(Object.assign([], scoreEarnedByCustomers));
+      }, delay);
+    });
+  }
+
+  /*
   static saveAuthor(author) {
 	author = Object.assign({}, author); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
@@ -76,6 +126,7 @@ class AuthorApi {
       }, delay);
     });
   }
+  */
 }
 
-export default AuthorApi;
+export default GamesApi;
